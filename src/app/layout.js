@@ -2,6 +2,6 @@ import './globals.css'
 
 export default function RootLayout({children}) {
     return (
-        <>{children}</>
+        <html lang="en">{children}</html>
     )
 }
