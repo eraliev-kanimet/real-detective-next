@@ -1,9 +1,9 @@
 "use client"
 
 import {useEffect, useState} from 'react';
-import style from "@/app/(pages)/reviews/reviews.module.scss";
-import Review from "@/app/components/review-card/review-card";
+import style from "@/app/(pages)/blog/blogpage.module.scss";
 import Pagination from "@/app/components/pagination/pagination";
+import Article from "@/app/components/article/article";
 import axios from "axios";
 
 const Content = () => {
@@ -14,35 +14,35 @@ const Content = () => {
         last: 0,
         links: [],
     })
-    const [reviews, setReviews] = useState([])
+    const [articles, setArticles] = useState([])
 
     useEffect(async () => {
-        await getReviews('http://localhost:8000/api/reviews')
+        await getArticles('http://localhost:8000/api/articles')
     }, [])
 
-    const getReviews = async (url) => {
+    const getArticles = async (url) => {
         await axios.get(url)
             .then(response => response.data)
             .then(response => {
-                setReviews(response.data)
+                setArticles(response.data)
 
                 setMeta({
-                    path: response.path,
-                    limit: response.per_page,
-                    current: response.current_page,
-                    last: response.last_page,
-                    links: response.links,
+                    path: response.meta.path,
+                    limit: response.meta.per_page,
+                    current: response.meta.current_page,
+                    last: response.meta.last_page,
+                    links: response.meta.links,
                 })
             })
     }
 
     return (
         <>
-            <div className={style.page_block}>
-                {reviews.map(review => <Review key={review.id} review={review}/>)}
+            <div className={style.block_container}>
+                {articles.map(article => <Article key={article.id} article={article}/>)}
             </div>
             <Pagination
-                fetch={getReviews}
+                fetch={getArticles}
                 path={meta.path}
                 limit={meta.limit}
                 initLimit={12}
