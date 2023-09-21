@@ -6,18 +6,19 @@ import Breadcrumbs from "@/app/components/breadcrumbs/breadcrumbs";
 import CategoryTab from "@/app/components/catalog/tab";
 import Table from "@/app/components/catalog/prices/prices";
 import PriceMobile from "@/app/components/catalog/prices-mobile/prices-mobile";
+import parse from "html-react-parser";
 
-function Content(props) {
+function Content({categories, text}) {
     const [category, setCategory] = useState('')
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        setCategoryItems(props.categories.hasOwnProperty('private_person') ? 'private_person' : 'business')
-    }, [props])
+        setCategoryItems(categories.hasOwnProperty('private_person') ? 'private_person' : 'business')
+    }, [])
 
     const setCategoryItems = (key) => {
         setCategory(key)
-        setItems(props.categories[key] ?? [])
+        setItems(categories[key] ?? [])
     }
 
     return (
@@ -25,9 +26,10 @@ function Content(props) {
             <section className={style.price_header}>
                 <Breadcrumbs links={[{last: true, name: 'Цены'}]}/>
                 <h1 className={style.h1}>цены на услуги детективного агентства</h1>
+                <div className={style.price_p}>{parse(text)}</div>
                 <div className={style.services__tabs}>
                     {
-                        props.categories.hasOwnProperty('private_person') ? (
+                        categories.hasOwnProperty('private_person') ? (
                             <CategoryTab
                                 onClick={() => setCategoryItems('private_person')}
                                 current={category}
@@ -37,7 +39,7 @@ function Content(props) {
                         ) : ''
                     }
                     {
-                        props.categories.hasOwnProperty('business') ? (
+                        categories.hasOwnProperty('business') ? (
                             <CategoryTab
                                 onClick={() => setCategoryItems('business')}
                                 current={category}
