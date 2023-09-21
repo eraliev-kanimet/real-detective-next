@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "@/app/components/Header/Header";
-import Footer from "@/app/components/Footer/Footer";
+import Header from "@/app/components/header/header";
+import Footer from "@/app/components/footer/footer";
 import {Geologica} from "next/font/google";
 
 const geologica = Geologica({subsets: ['latin', 'cyrillic']})
