@@ -1,5 +1,5 @@
 import style from "./blogpage.module.scss";
-import fetchContent from "@/app/services/fetch";
+import fetchContent from "@/services/fetch";
 import Layout from "@/app/components/Layout";
 import Breadcrumbs from "@/app/components/breadcrumbs/breadcrumbs";
 import Content from "@/app/(pages)/blog/content";

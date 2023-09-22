@@ -4,7 +4,7 @@ import Image from "next/image";
 import VectorRight from "../../public/vectorright.svg";
 import NoMatch from "../../public/nomatch-404.png";
 import Layout from "@/app/components/Layout";
-import fetchContent from "@/app/services/fetch";
+import fetchContent from "@/services/fetch";
 
 export default async function NoModule({categories = null, properties = null}) {
     if (!categories) {

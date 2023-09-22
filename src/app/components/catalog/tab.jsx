@@ -1,8 +1,8 @@
 import React from 'react';
 import style from "../../(pages)/price/price.module.scss";
 import Image from "next/image";
-import Person from "../../../../public/dashicons_businessman.svg";
-import Business from "../../../../public/dashbusiness-center.svg";
+import Person from "@/../public/dashicons_businessman.svg";
+import Business from "@/../public/dashbusiness-center.svg";
 
 const CategoryTab = ({current, category, categoryName, onClick}) => {
     return (

@@ -13,14 +13,13 @@ function MainBG({properties}) {
 
     return (
         <>
+            <SocialMediaButtons properties={properties}/>
             <section className={style.background}>
                 <div className={style.container}>
                     <h1 className={style.h1}>perhin & partners</h1>
                     <h2 className={style.h2}>детективное агентство в москве</h2>
 
                     <SecondModal properties={properties} isOnMain={true}/>
-
-                    <SocialMediaButtons properties={properties}/>
                 </div>
             </section>
             <div className={style.button_mobile}>

@@ -1,144 +1,39 @@
 "use client"
 
-import React, {useState} from "react";
-import styled from "styled-components";
+import {useState} from "react";
 import style from "./navbar.module.scss";
-import Category from "./categories/category.jsx";
-import Item from "./item.jsx";
+import Category from "./category/category.jsx";
+import Item from "./category/item.jsx";
 import Phone from "../../../../public/gg_phone.svg";
 import Telegram from "../../../../public/telegram.svg";
 import WhatsApp from "../../../../public/whatsapp.png";
-
-const StyledBurger = styled.div`
-    height: 30px;
-    padding: 4px 15px;
-    align-items: center;
-    gap: 8px;
-    position: fixed;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    border-radius: 48px;
-    color: #fff;
-    background-color: #110f0f;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    z-index: 20;
-    display: none;
-
-    @media screen and (max-width: 1230px) and (min-width: 675px) {
-        display: flex;
-        justify-content: space-around;
-        flex-flow: row nowrap;
-        left: 15%;
-    }
-
-    @media screen and (max-width: 674px) {
-        display: flex;
-        justify-content: space-around;
-        flex-flow: row nowrap;
-        right: 7%;
-    }
-
-    @media (max-width: 1230px) {
-        .menu_background {
-            position: fixed;
-            z-index: 40;
-            top: 88px;
-            left: 0;
-            height: 100vh;
-            width: 100vh;
-            background-color: rgba(17, 15, 15, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-    }
-
-    .dark {
-        background-color: rgba(17, 15, 15, 0.5);
-    }
-
-    div {
-        &:nth-child(1) {
-            transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
-        }
-
-        &:nth-child(2) {
-            transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
-            opacity: ${({ open }) => (open ? 0 : 1)};
-        }
-
-        &:nth-child(3) {
-            transform: ${({ open }) =>
-                open ? "rotate(-45deg) scaleX(2)" : "rotate(0) scaleX(1)"};
-        }
-    }
-`;
-
-const Ul = styled.ul`
-    list-style: none;
-    display: flex;
-    flex-flow: row nowrap;
-    column-gap: 1rem;
-    margin-top: 0;
-
-    a {
-        text-decoration: none;
-    }
-
-    @media (max-width: 1230px) {
-        flex-flow: column nowrap;
-        background-color: #fff;
-        position: fixed;
-        z-index: 30;
-        transform: ${({open}) => (open ? "translateX(0)" : "translateX(100%)")};
-        top: 88px;
-        left: 0;
-        right: 0;
-        padding: 24px 40px;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    @media (max-width: 600px) {
-        flex-flow: column nowrap;
-        background-color: #fff;
-        position: fixed;
-        z-index: 30;
-        transform: ${({open}) => (open ? "translateX(0)" : "translateX(100%)")};
-        top: 65px;
-        left: 0;
-        right: 0;
-        padding: 24px 16px;
-        height: 812px;
-        transition: transform 0.3s ease-in-out;
-        margin: 0;
-    }`;
 
 const Navbar = ({properties, categories}) => {
     const [open, setOpen] = useState(false);
 
     return (
         <>
-            <StyledBurger open={open} onClick={() => setOpen(!open)}>
+            <div
+                className={open ? [style.burger, style.active].join(' ') : style.burger}
+                onClick={() => setOpen(!open)}
+            >
                 <section className={style.menu}>
-                    <div className={style.div1}/>
-                    <div className={style.div2}/>
-                    <div className={style.div3}/>
+                    <div/>
+                    <div/>
+                    <div/>
                 </section>
                 Меню
-            </StyledBurger>
+            </div>
             <nav className={style.nav}>
                 <div
-                    className={`${style["menu-background"]} ${open ? style["dark"] : ""}`}
+                    className={open ? [style.menu_background, style.dark].join(' ') : style.menu_background}
                 >
-                    <Ul open={open}>
+                    <ul className={open ? [style.ul, style.active].join(' ') : style.ul}>
                         <Category name="Для частных лиц" categories={categories.private_person ?? []}/>
                         <Category name="Для бизнеса" categories={categories.business ?? []}/>
 
-                        {categories.private_person ?
-                            <Item url='/services' name='Для частных лиц' classes={style.limob}/> : ''}
-                        {categories.business ? <Item url='/services' name='Для бизнеса' classes={style.limob}/> : ''}
+                        {categories.private_person ? <Item url='/services' name='Для частных лиц' mobile={true}/> : ''}
+                        {categories.business ? <Item url='/services' name='Для бизнеса' mobile={true}/> : ''}
 
                         <Item url='/price' name='Цены'/>
                         <Item url='/blog' name='Блог'/>
@@ -160,7 +55,7 @@ const Navbar = ({properties, categories}) => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <img src={Telegram} alt="Telegram" className={style.telegram}/>
+                                <img src={Telegram} alt="Telegram" className={style.link}/>
                             </a>
                             <a
                                 className={style.a}
@@ -168,10 +63,10 @@ const Navbar = ({properties, categories}) => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <img src={WhatsApp} alt="WhatsApp" className={style.whatsapp}/>
+                                <img src={WhatsApp} alt="WhatsApp" className={style.link}/>
                             </a>
                         </div>
-                    </Ul>
+                    </ul>
                 </div>
             </nav>
         </>

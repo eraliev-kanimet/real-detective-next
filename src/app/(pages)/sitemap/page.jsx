@@ -1,4 +1,4 @@
-import fetchContent from "@/app/services/fetch";
+import fetchContent from "@/services/fetch";
 import Layout from "@/app/components/Layout";
 import './sitemap.css'
 

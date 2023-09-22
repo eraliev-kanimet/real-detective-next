@@ -6,13 +6,13 @@ import Breadcrumbs from "@/app/components/breadcrumbs/breadcrumbs";
 import CategoryTab from "@/app/components/catalog/tab";
 
 import Image from "next/image";
-import ArrowDown from "../../../../public/biege_arrow_down.svg";
-import Info from "../../../../public/services-chat.svg";
-import Family from "../../../../public/services-family.svg";
-import Binoculars from "../../../../public/services-binoculars.svg";
-import Search from "../../../../public/services-search.svg";
-import Protect from "../../../../public/services-protect.svg";
-import Journalism from "../../../../public/services-journalism.svg";
+import ArrowDown from "@/../public/biege_arrow_down.svg";
+import Info from "@/../public/services-chat.svg";
+import Family from "@/../public/services-family.svg";
+import Binoculars from "@/../public/services-binoculars.svg";
+import Search from "@/../public/services-search.svg";
+import Protect from "@/../public/services-protect.svg";
+import Journalism from "@/../public/services-journalism.svg";
 
 const Content = ({categories}) => {
     const [category, setCategory] = useState('')

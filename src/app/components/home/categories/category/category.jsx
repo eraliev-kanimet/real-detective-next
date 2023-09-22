@@ -1,8 +1,8 @@
 import style from "./category.module.scss";
-import Foot from "../../../../../../public/icon_foot.svg";
-import Head from "../../../../../../public/icon_head.svg";
-import Camera from "../../../../../../public/icon_camera.svg";
-import ArrowRight from "../../../../../../public/vectorright.svg"
+import Foot from "@/../public/icon_foot.svg";
+import Head from "@/../public/icon_head.svg";
+import Camera from "@/../public/icon_camera.svg";
+import ArrowRight from "@/../public/vectorright.svg"
 import Image from "next/image";
 
 export default function Category({category}) {

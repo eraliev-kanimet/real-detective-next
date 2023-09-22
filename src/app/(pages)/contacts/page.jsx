@@ -1,10 +1,10 @@
 import style from "./contacts.module.scss";
 import Image from "next/image";
-import Phone from "../../../../public/footer-phone.svg";
-import Location from "../../../../public/footer-location.svg";
-import Telegram from "../../../../public/contact-telegram.svg";
-import Whatsapp from "../../../../public/contact-whatsapp.svg";
-import fetchContent from "@/app/services/fetch";
+import Phone from "@/../public/footer-phone.svg";
+import Location from "@/../public/footer-location.svg";
+import Telegram from "@/../public/contact-telegram.svg";
+import Whatsapp from "@/../public/contact-whatsapp.svg";
+import fetchContent from "@/services/fetch";
 import Layout from "@/app/components/Layout";
 
 const props = await fetchContent('contacts')

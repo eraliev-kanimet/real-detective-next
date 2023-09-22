@@ -4,7 +4,7 @@ import {useState} from "react";
 import Image from "next/image";
 import hasAnyValueRecursive from "@/helpers/hasAnyValueRecursive";
 import style from "@/app/(pages)/blog/[slug]/articlepage.module.scss";
-import VectorUp from "../../../../../../public/article-icon.svg";
+import VectorUp from "@/../public/article-icon.svg";
 
 const ArticleHeaders = ({article_content}) => {
     const [showItems, setShowItems] = useState(false);

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Play from "../../../../../public/play.svg";
 import Binoculars from "../../../../../public/services-binoculars.svg";
 import FAQ from "@/app/components/faq/faq";
-import fetchContent from "@/app/services/fetch";
+import fetchContent from "@/services/fetch";
 import Layout from "@/app/components/Layout";
 import parse from "html-react-parser";
 import Breadcrumbs from "@/app/components/breadcrumbs/breadcrumbs";

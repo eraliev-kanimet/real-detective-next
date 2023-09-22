@@ -11,7 +11,7 @@ import Safety from "@/app/components/home/safety/safety";
 import FAQ from "@/app/components/faq/faq";
 import MapHome from "@/app/components/home/map/map";
 import Blog from "@/app/components/home/blog/blog";
-import fetchContent from "@/app/services/fetch";
+import fetchContent from "@/services/fetch";
 
 const props = await fetchContent('home')
 

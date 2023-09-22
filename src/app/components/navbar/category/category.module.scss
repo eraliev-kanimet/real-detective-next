@@ -1,0 +1,76 @@
+.vector,
+.service {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.vector img {
+  transition: all 0.3s ease;
+}
+
+.service {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 0.5rem;
+  padding: 18px 10px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff2d8;
+  }
+}
+
+@media (max-width: 1230px) {
+  .vector,
+  .service {
+    display: none;
+  }
+
+  .li {
+    display: flex;
+    height: 56px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: #403531;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+}
+
+@media screen and (min-width: 1230px) {
+  .right,
+  .limob {
+    display: none;
+  }
+
+  .li {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 0.5rem;
+    padding: 18px 10px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff2d8;
+    }
+  }
+}
+
+@media screen and (min-width: 1880px) {
+  .limob {
+    display: none;
+  }
+}

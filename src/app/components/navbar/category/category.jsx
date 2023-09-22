@@ -1,7 +1,7 @@
 import {useState} from 'react';
-import style from "../navbar.module.scss";
+import style from "./category.module.scss";
 import Vectordown from "../../../../../public/vectordown.svg";
-import Categories from "./categories.jsx";
+import Categories from "../categories/categories.jsx";
 import Image from "next/image";
 
 const Category = ({categories, name}) => {
@@ -14,17 +14,15 @@ const Category = ({categories, name}) => {
     if (categories.length) {
         return (
             <>
-                <li className={style.liservices} onClick={handleModalClick}>
-                    { name }
+                <li className={style.service} onClick={handleModalClick}>
+                    {name}
                     <div className={style.vector}>
                         <Image
                             src={Vectordown}
                             alt="Vectordown"
                             style={{
                                 transform: showModal ? "rotate(0deg)" : "rotate(180deg)",
-                                transition: "transform 0.3s ease",
                             }}
-                            className={style.vector}
                         />
                     </div>
                 </li>
