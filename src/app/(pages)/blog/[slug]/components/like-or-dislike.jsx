@@ -10,6 +10,7 @@ import Fc from "@/../public/article-facebook.svg";
 import LikeImage from "@/../public/article-like.svg";
 import DislikeImage from "@/../public/article-dislike.svg";
 import axios from "axios";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const LikeOrDislike = ({article_id, rating_id, initLikes, initDislikes}) => {
     const [liked, setLiked] = useState(false);
@@ -29,7 +30,7 @@ const LikeOrDislike = ({article_id, rating_id, initLikes, initDislikes}) => {
             localStorage.removeItem(key);
         }
 
-        return await axios.post('http://localhost:8000/api/rating/likes_or_dislikes', {
+        return await axios.post(process.env.NEXT_PUBLIC_APP_API_URL + '/api/rating/likes_or_dislikes', {
             rating: rating_id,
             likes: data.likes,
             dislikes: data.dislikes,

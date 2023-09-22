@@ -1,4 +1,3 @@
-import React from 'react';
 import style from "./navbar.module.scss";
 import Vectorright from "../../../../public/bxs_chevron-right.svg";
 import Image from "next/image";

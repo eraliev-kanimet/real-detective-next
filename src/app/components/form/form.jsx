@@ -10,6 +10,7 @@ import mainstyles from "../home/main-bg/main-bg.module.scss";
 import "../faq/faq.scss";
 import axios from "axios";
 import Image from "next/image";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 export default function Form(props) {
     const isMobile = useMediaQuery({query: `(max-width: 580px)`});
@@ -25,7 +26,7 @@ export default function Form(props) {
     const onSubmit = async (data) => {
         setIsLoading(true)
 
-        await axios.post('/api/form/callback', data).finally(() => {
+        await axios.post(process.env.NEXT_PUBLIC_APP_API_URL + '/api/form/callback', data).finally(() => {
             props.isPopup ? props.onButtonClick() : props.onButtonClickShow();
 
             setIsLoading(false)

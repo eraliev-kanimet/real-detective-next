@@ -16,6 +16,7 @@ import FaqItem from "@/app/components/faq/faq-item";
 import "@/app/components/faq/faq.scss";
 import Views from "@/app/(pages)/blog/[slug]/components/views";
 import LikeOrDislike from "@/app/(pages)/blog/[slug]/components/like-or-dislike";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 export default async function Page({params}) {
     const {categories, properties, articles, article} = await fetchContent('article', params.slug)
@@ -133,7 +134,7 @@ export default async function Page({params}) {
                                     <div className={style.blokdirector}>
                                         <img
                                             className={style.img64}
-                                            src={'http://localhost:8000/storage/' + content.data.author.image}
+                                            src={process.env.NEXT_PUBLIC_APP_API_URL + '/storage/' + content.data.author.image}
                                             alt="director"
                                         />
                                         <p className={style.text}>
@@ -174,7 +175,7 @@ export default async function Page({params}) {
                                 {content.data.images.length === 1 ? (
                                     <div className={style.blok_titletext}>
                                         <img
-                                            src={'http://localhost:8000/storage/' + content.data.images[0].image}
+                                            src={process.env.NEXT_PUBLIC_APP_API_URL + '/storage/' + content.data.images[0].image}
                                             alt={content.data.images[0].alt}
                                             className={style.image}
                                         />
@@ -184,7 +185,7 @@ export default async function Page({params}) {
                                     content.data.images.map(image => (
                                         <img
                                             key={image.image}
-                                            src={'http://localhost:8000/storage/' + image.image}
+                                            src={process.env.NEXT_PUBLIC_APP_API_URL + '/storage/' + image.image}
                                             alt={image.alt}
                                             className={style.imageslider}
                                         />

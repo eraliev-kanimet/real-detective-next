@@ -5,6 +5,7 @@ import style from "@/app/(pages)/reviews/reviews.module.scss";
 import Review from "@/app/components/review-card/review-card";
 import Pagination from "@/app/components/pagination/pagination";
 import axios from "axios";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const Content = () => {
     const [meta, setMeta] = useState({
@@ -17,7 +18,7 @@ const Content = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(async () => {
-        await getReviews('http://localhost:8000/api/reviews')
+        await getReviews(process.env.NEXT_PUBLIC_APP_API_URL + '/api/reviews')
     }, [])
 
     const getReviews = async (url) => {
