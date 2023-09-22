@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import {useState} from "react";
 import "./social-media.scss";
 import MediaButttons from "../../../../../public/bxs_chat.svg";
 import Telegram from "../../../../../public/telegram.svg";
@@ -17,27 +17,24 @@ const SocialMediaButtons = ({properties}) => {
             <button onClick={handleButtonClick} className="socmedia_button">
                 <Image
                     src={MediaButttons}
-                    className={`socmedia_icon ${showButtons ? "clicked" : ""}`}
-                    style={{
-                        transition: "transform 0.3s ease",
-                    }}
+                    className={showButtons ? 'socmedia_icon' : 'socmedia_icon clicked'}
                     alt="socmedia"
                 />
             </button>
-            <div className={`social-buttons ${showButtons ? "show" : "hide"}`}>
+            <div className={showButtons ? 'social-buttons show' : 'social-buttons hide'}>
                 <a
                     href={'https://t.me/' + properties.telegram}
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <Image src={Telegram} alt="Telegram" className="socmedia_telegram" />
+                    <Image src={Telegram} alt="Telegram"/>
                 </a>
                 <a
                     href={properties.whatsapp}
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <Image src={WhatsApp} alt="WhatsApp" className="socmedia_whatsapp" />
+                    <Image src={WhatsApp} width={48} height={48} alt="WhatsApp"/>
                 </a>
             </div>
         </div>

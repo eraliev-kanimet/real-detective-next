@@ -5,7 +5,6 @@ import style from "@/app/(pages)/reviews/reviews.module.scss";
 import Review from "@/app/components/review-card/review-card";
 import Pagination from "@/app/components/pagination/pagination";
 import axios from "axios";
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const Content = () => {
     const [meta, setMeta] = useState({

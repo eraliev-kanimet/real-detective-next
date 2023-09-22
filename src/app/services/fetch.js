@@ -1,4 +1,3 @@
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const fetchContent = async (page, slug = '') => {
     const response = await fetch(process.env.NEXT_PUBLIC_APP_API_URL + `/api/page?page=${page}&slug=${slug}`, {

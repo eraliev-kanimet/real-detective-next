@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useState} from "react";
+import {useState} from "react";
 import style from "./main-bg.module.scss";
 import Image from "next/image";
 import Vectorright from "../../../../../public/vectorright.svg";

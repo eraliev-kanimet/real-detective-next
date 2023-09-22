@@ -5,7 +5,6 @@ import style from "@/app/(pages)/blog/blogpage.module.scss";
 import Pagination from "@/app/components/pagination/pagination";
 import Article from "@/app/components/article/article";
 import axios from "axios";
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const Content = () => {
     const [meta, setMeta] = useState({

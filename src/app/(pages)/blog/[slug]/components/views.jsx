@@ -3,7 +3,6 @@
 import React, {useEffect, useState} from 'react';
 import style from "../articlepage.module.scss";
 import axios from "axios";
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const Views = ({init, rating}) => {
     const [views, setViews] = useState(init)

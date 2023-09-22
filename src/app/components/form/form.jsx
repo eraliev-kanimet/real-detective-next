@@ -10,7 +10,6 @@ import mainstyles from "../home/main-bg/main-bg.module.scss";
 import "../faq/faq.scss";
 import axios from "axios";
 import Image from "next/image";
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 export default function Form(props) {
     const isMobile = useMediaQuery({query: `(max-width: 580px)`});

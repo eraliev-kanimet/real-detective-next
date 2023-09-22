@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./categories.module.scss";
 import {Scrollbar} from "react-scrollbars-custom";
 import Subcategories from "./subcategories.jsx";

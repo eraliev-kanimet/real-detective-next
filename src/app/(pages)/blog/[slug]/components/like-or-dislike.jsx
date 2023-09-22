@@ -10,7 +10,6 @@ import Fc from "@/../public/article-facebook.svg";
 import LikeImage from "@/../public/article-like.svg";
 import DislikeImage from "@/../public/article-dislike.svg";
 import axios from "axios";
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const LikeOrDislike = ({article_id, rating_id, initLikes, initDislikes}) => {
     const [liked, setLiked] = useState(false);
