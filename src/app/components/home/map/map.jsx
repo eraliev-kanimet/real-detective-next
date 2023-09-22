@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./map.module.scss";
-import Vectorright from "@/../public/Vectorright.svg";
+import Vectorright from "@/../public/vectorright.svg";
 import Image from "next/image";
 
 export default function Map({map}) {

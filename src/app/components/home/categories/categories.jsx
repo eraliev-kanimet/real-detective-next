@@ -4,7 +4,7 @@ import style from "./categories.module.scss";
 import Category from "./category/category.jsx";
 import Person from "../../../../../public/icon_person.svg";
 import Business from "../../../../../public/icon_business.svg";
-import Vectorright from "../../../../../public/Vectorright.svg";
+import Vectorright from "../../../../../public/vectorright.svg";
 import {Splide, SplideSlide} from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import {useEffect, useState} from "react";

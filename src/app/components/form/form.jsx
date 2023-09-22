@@ -4,7 +4,7 @@ import {useMediaQuery} from "react-responsive";
 import InputMask from "react-input-mask";
 import FormError from "../../../../public/FormError.jsx";
 import FormCheck from "../../../../public/FormCheck.jsx";
-import Vectorright from "../../../../public/Vectorright.svg";
+import Vectorright from "../../../../public/vectorright.svg";
 import {useState} from "react";
 import mainstyles from "../home/main-bg/main-bg.module.scss";
 import "../faq/faq.scss";
