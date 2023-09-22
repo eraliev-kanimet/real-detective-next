@@ -6,11 +6,16 @@ import NoMatch from "../../public/nomatch-404.png";
 import Layout from "@/app/components/Layout";
 import fetchContent from "@/app/services/fetch";
 
-const props = await fetchContent('not_found')
+export default async function NoModule({categories = null, properties = null}) {
+    if (!categories) {
+        const props = await fetchContent('not_found')
 
-export default function NoModule() {
+        categories = props.categories
+        properties = props.properties
+    }
+
     return (
-        <Layout properties={props.properties} categories={props.properties}>
+        <Layout properties={properties} categories={categories}>
             <main className={style.container}>
                 <div className={style.blok_nomatch}>
                     <h1 className={style.h1}>404. Страница не найдена</h1>
