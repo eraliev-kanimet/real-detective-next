@@ -1,5 +1,5 @@
 import style from "./about.module.scss";
-import Img from "../../../../../public/about.png";
+import Img from "@/../public/about.png";
 import parse from 'html-react-parser';
 import Image from "next/image"
 

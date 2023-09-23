@@ -4,9 +4,9 @@ import {useState} from "react";
 import {useForm} from "react-hook-form";
 import {useMediaQuery} from "react-responsive";
 import InputMask from "react-input-mask";
-import FormError from "../../../../public/FormError.jsx";
-import FormCheck from "../../../../public/FormCheck.jsx";
-import Vectorright from "../../../../public/vectorright.svg";
+import FormError from "@/../public/FormError.jsx";
+import FormCheck from "@/../public/FormCheck.jsx";
+import Vectorright from "@/../public/vectorright.svg";
 import mainstyles from "../home/main-bg/main-bg.module.scss";
 import style from "./form.module.scss";
 

@@ -58,12 +58,6 @@
     flex-direction: column;
   }
 
-  .menu {
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.2rem;
-  }
-
   .menu_background {
     background-color: rgba(17, 15, 15, 0.5);
   }
@@ -152,6 +146,12 @@
       transform: translateX(0);
     }
   }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.2rem;
 }
 
 .burger {

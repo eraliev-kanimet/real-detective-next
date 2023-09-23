@@ -2,18 +2,18 @@ import style from "./footer.module.scss";
 
 import Image from "next/image";
 
-import Logo from "../../../../public/logo.svg";
-import Telegram from "../../../../public/footer-telegram.svg";
-import Techat from "../../../../public/footer-techat.svg";
-import Youtube from "../../../../public/footer-youtube.svg";
-import Profi from "../../../../public/footer-profi.svg";
-import Location from "../../../../public/footer-location.svg";
-import Phone from "../../../../public/footer-phone.svg";
-import Time from "../../../../public/footer-time.svg";
-import Email from "../../../../public/footer-email.svg";
-import Mir from "../../../../public/footer-mir.png";
-import Visa from "../../../../public/footer-visa.png";
-import Mastercard from "../../../../public/footer-mastercard.png";
+import Logo from "@/../public/logo.svg";
+import Telegram from "@/../public/footer-telegram.svg";
+import Techat from "@/../public/footer-techat.svg";
+import Youtube from "@/../public/footer-youtube.svg";
+import Profi from "@/../public/footer-profi.svg";
+import Location from "@/../public/footer-location.svg";
+import Phone from "@/../public/footer-phone.svg";
+import Time from "@/../public/footer-time.svg";
+import Email from "@/../public/footer-email.svg";
+import Mir from "@/../public/footer-mir.png";
+import Visa from "@/../public/footer-visa.png";
+import Mastercard from "@/../public/footer-mastercard.png";
 
 export default function Footer({properties, categories}) {
     return (

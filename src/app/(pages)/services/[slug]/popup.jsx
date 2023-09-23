@@ -3,8 +3,8 @@
 import {useState} from 'react';
 import style from "@/app/(pages)/services/[slug]/service.module.scss";
 import Image from "next/image";
-import Star from "../../../../../public/icon_star.svg";
-import VectorRight from "../../../../../public/vectorright.svg";
+import Star from "@/../public/icon_star.svg";
+import VectorRight from "@/../public/vectorright.svg";
 import SecondModal from "@/app/components/modal/second";
 import PopupPopup from "@/app/components/popup/popup";
 

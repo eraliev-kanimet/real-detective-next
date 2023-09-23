@@ -1,5 +1,5 @@
 import style from "./reviews.module.scss";
-import Arrow from "../../../../public/vectorright.svg";
+import Arrow from "@/../public/vectorright.svg";
 import Image from "next/image";
 import fetchContent from "@/services/fetch";
 import Layout from "@/app/components/Layout";

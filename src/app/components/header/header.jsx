@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../../../public/logo.svg";
-import Phone from "../../../../public/phone.svg";
-import Telegram from "../../../../public/telegram.svg";
-import WhatsApp from "../../../../public/whatsapp.png";
+import Logo from "@/../public/logo.svg";
+import Phone from "@/../public/phone.svg";
+import Telegram from "@/../public/telegram.svg";
+import WhatsApp from "@/../public/whatsapp.png";
 import style from "./header.module.scss";
 import Navbar from "@/app/components/navbar/navbar";
 

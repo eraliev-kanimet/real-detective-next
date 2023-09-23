@@ -4,9 +4,9 @@ import {useState} from "react";
 import style from "./navbar.module.scss";
 import Category from "./category/category.jsx";
 import Item from "./category/item.jsx";
-import Phone from "../../../../public/gg_phone.svg";
-import Telegram from "../../../../public/telegram.svg";
-import WhatsApp from "../../../../public/whatsapp.png";
+import Phone from "@/../public/gg_phone.svg";
+import Telegram from "@/../public/telegram.svg";
+import WhatsApp from "@/../public/whatsapp.png";
 
 const Navbar = ({properties, categories}) => {
     const [open, setOpen] = useState(false);

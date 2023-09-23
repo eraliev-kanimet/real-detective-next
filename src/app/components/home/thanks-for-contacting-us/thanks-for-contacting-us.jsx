@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Check from "../../../../../public/white_check.svg";
+import Check from "@/../public/white_check.svg";
 import style from "./thanks-for-contacting-us.module.scss"
 
 export default function ThanksForContactingUs(props) {

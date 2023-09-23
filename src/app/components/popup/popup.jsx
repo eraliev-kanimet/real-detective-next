@@ -1,6 +1,6 @@
 import style from "./popup.module.scss"
-import Cross from "../../../../public/icon-white-cross.svg";
-import Logo from "../../../../public/logo.svg";
+import Cross from "@/../public/icon-white-cross.svg";
+import Logo from "@/../public/logo.svg";
 import Image from "next/image";
 
 export default function Popup(props) {

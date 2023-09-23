@@ -1,5 +1,5 @@
 import style from "./license.module.scss";
-import LicenseImg from "../../../../../public/license.png";
+import LicenseImg from "@/../public/license.png";
 import Image from "next/image"
 
 export default function License() {

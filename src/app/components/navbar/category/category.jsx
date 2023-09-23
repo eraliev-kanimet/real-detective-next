@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import style from "./category.module.scss";
-import Vectordown from "../../../../../public/vectordown.svg";
+import Vectordown from "@/../public/vectordown.svg";
 import Categories from "../categories/categories.jsx";
 import Image from "next/image";
 

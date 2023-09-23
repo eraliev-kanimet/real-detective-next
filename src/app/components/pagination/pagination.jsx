@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react";
 import style from "./pagination.module.scss";
 import Image from "next/image";
 import ArrowLeft from "@/../public/white_arrow_left.svg";
@@ -20,7 +19,7 @@ const Pagination = ({limit, initLimit, path, links, current, last, fetch}) => {
             className={limit > initLimit ? style.button_show_more_disabled : style.button_show_more}
         >
             Показать еще 12
-            <img src={ArrowDown} alt=""></img>
+            <Image width={24} height={24} src={ArrowDown} alt=""/>
         </button>
         <div className={style.numbers}>
             {

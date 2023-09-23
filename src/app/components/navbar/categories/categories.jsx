@@ -2,12 +2,12 @@ import {useState} from "react";
 import Image from "next/image";
 import style from "./categories.module.scss";
 import {Scrollbar} from "react-scrollbars-custom";
-import Info from "../../../../../public/services-chat.svg";
-import Family from "../../../../../public/services-family.svg";
-import Binoculars from "../../../../../public/services-binoculars.svg";
-import Search from "../../../../../public/services-search.svg";
-import Protect from "../../../../../public/services-protect.svg";
-import Journalism from "../../../../../public/services-journalism.svg";
+import Info from "@/../public/services-chat.svg";
+import Family from "@/../public/services-family.svg";
+import Binoculars from "@/../public/services-binoculars.svg";
+import Search from "@/../public/services-search.svg";
+import Protect from "@/../public/services-protect.svg";
+import Journalism from "@/../public/services-journalism.svg";
 
 export default function Categories({categories}) {
     return (

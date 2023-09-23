@@ -1,8 +1,8 @@
 import Image from "next/image";
 import style from "./how-to-reach-us.module.scss"
-import Telegram from "../../../../../public/footer-telegram.svg";
-import WhatsApp from "../../../../../public/popup-whatsapp.svg";
-import Phone from "../../../../../public/popup-phone.svg";
+import Telegram from "@/../public/footer-telegram.svg";
+import WhatsApp from "@/../public/popup-whatsapp.svg";
+import Phone from "@/../public/popup-phone.svg";
 import Form from "../form.jsx";
 
 export default function HowToReachUs({properties, onButtonClickShow}) {

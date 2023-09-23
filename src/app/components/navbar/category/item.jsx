@@ -1,5 +1,5 @@
 import style from "./category.module.scss";
-import Vectorright from "../../../../../public/bxs_chevron-right.svg";
+import Vectorright from "@/../public/bxs_chevron-right.svg";
 import Image from "next/image";
 
 const Item = ({url, name, mobile}) => {
