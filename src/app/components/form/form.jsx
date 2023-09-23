@@ -1,19 +1,18 @@
-import style from "./form.module.scss";
+import axios from "axios";
+import Image from "next/image";
+import {useState} from "react";
 import {useForm} from "react-hook-form";
 import {useMediaQuery} from "react-responsive";
 import InputMask from "react-input-mask";
 import FormError from "../../../../public/FormError.jsx";
 import FormCheck from "../../../../public/FormCheck.jsx";
 import Vectorright from "../../../../public/vectorright.svg";
-import {useState} from "react";
 import mainstyles from "../home/main-bg/main-bg.module.scss";
-import "../faq/faq.scss";
-import axios from "axios";
-import Image from "next/image";
+import style from "./form.module.scss";
 
 export default function Form(props) {
-    const isMobile = useMediaQuery({query: `(max-width: 580px)`});
-    const [isLoading, setIsLoading] = useState(false)
+    const isMobile = useMediaQuery({query: "(max-width: 580px)"});
+    const [isLoading, setIsLoading] = useState(false);
 
     const {
         register,
@@ -23,33 +22,72 @@ export default function Form(props) {
     } = useForm();
 
     const onSubmit = async (data) => {
-        setIsLoading(true)
+        setIsLoading(true);
 
-        await axios.post(process.env.NEXT_PUBLIC_APP_API_URL + '/api/form/callback', data).finally(() => {
-            props.isPopup ? props.onButtonClick() : props.onButtonClickShow();
-
-            setIsLoading(false)
-        })
+        await axios.post(`${process.env.NEXT_PUBLIC_APP_API_URL}/api/form/callback`, data)
+            .then(() => {
+                if (props.isPopup) {
+                    props.onButtonClick();
+                } else {
+                    props.onButtonClickShow();
+                }
+            }).finally(() => {
+                setIsLoading(false);
+            });
     };
 
-    const [isFocusName, setIsFocusName] = useState(false);
-    const [isFocusNumber, setIsFocusNumber] = useState(false);
-    const [isFocusQuestion, setIsFocusQuestion] = useState(false);
+    const [isFocus, setIsFocus] = useState({
+        name: false,
+        number: false,
+        question: false,
+    });
 
-    const handleFocusName = () => {
-        setIsFocusName(true);
-        trigger("name").then();
+    const handleFocus = (field) => {
+        setIsFocus({...isFocus, [field]: true});
+        trigger(field).then();
     };
 
-    const handleFocusNumber = () => {
-        setIsFocusNumber(true);
-        trigger("number").then();
-    };
-
-    const handleFocusQuestion = () => {
-        setIsFocusQuestion(true);
-        trigger("question").then();
-    };
+    const renderInputField = (name, placeholder, mask = null) => (
+        <div className={style.wrapper}>
+            {mask ? (
+                <InputMask
+                    {...register(name, {
+                        required: true,
+                        minLength: 2,
+                    })}
+                    className={style.input_field}
+                    type="text"
+                    placeholder={placeholder}
+                    mask={mask}
+                    maskChar=""
+                    onFocus={() => handleFocus(name)}
+                    onBlur={() => handleFocus(name)}
+                />
+            ) : (
+                <input
+                    {...register(name, {
+                        required: true,
+                        minLength: 2,
+                    })}
+                    onFocus={() => handleFocus(name)}
+                    onBlur={() => handleFocus(name)}
+                    className={style.input_field}
+                    type="text"
+                    placeholder={placeholder}
+                />
+            )}
+            {errors[name]?.type === "required" && (
+                <div className={style.icon}>
+                    <FormError/>
+                </div>
+            )}
+            {!errors[name] && isFocus[name] && (
+                <div className={style.icon}>
+                    <FormCheck/>
+                </div>
+            )}
+        </div>
+    );
 
     if (props.isOnMain && isMobile) {
         return null;
@@ -61,88 +99,11 @@ export default function Form(props) {
                 }
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <div className={style.wrapper}>
-                    <input
-                        {...register("name", {
-                            required: true,
-                            minLength: 2,
-                        })}
-                        onFocus={() => handleFocusName()}
-                        onBlur={() => handleFocusName()}
-                        className={style.name}
-                        type="text"
-                        placeholder="Как к вам обращаться?"
-                    ></input>
-                    {errors?.name?.type === "required" && (
-                        <div className={style.icon}>
-                            <FormError/>
-                        </div>
-                    )}
-                    {!errors?.name && isFocusName && (
-                        <div className={style.icon}>
-                            <FormCheck/>
-                        </div>
-                    )}
-                </div>
+                {renderInputField("name", "Как к вам обращаться?")}
+                {renderInputField("number", "Номер телефона", "+7 (999) 999-99-99")}
 
-                <div className={style.wrapper}>
-                    <InputMask
-                        {...register("number", {
-                            required: true,
-                            minLength: 18,
-                        })}
-                        className={style.number}
-                        type="text"
-                        placeholder="Номер телефона"
-                        mask="+7 (999) 999-99-99"
-                        maskChar=""
-                        onFocus={() => handleFocusNumber()}
-                        onBlur={() => handleFocusNumber()}
-                    />
-                    {errors?.number?.type === "required" && (
-                        <div className={style.icon}>
-                            <FormError/>
-                        </div>
-                    )}
-                    {errors?.number?.type === "minLength" && (
-                        <div>
-                            <FormError/>
-                        </div>
-                    )}
-                    {!errors?.number && isFocusNumber && (
-                        <div className={style.icon}>
-                            <FormCheck/>
-                        </div>
-                    )}
-                </div>
+                {!props.isPopup && (renderInputField("question", "Какой вопрос вас беспокоит?"))}
 
-                {props.isPopup ? (
-                    ""
-                ) : (
-                    <div className={style.wrapper}>
-                        <input
-                            {...register("question", {
-                                required: true,
-                                minLength: 2,
-                            })}
-                            className={style.question}
-                            type="text"
-                            placeholder="Какой вопрос вас беспокоит?"
-                            onFocus={() => handleFocusQuestion()}
-                            onBlur={() => handleFocusQuestion()}
-                        ></input>
-                        {errors?.question?.type === "required" && (
-                            <div className={style.icon}>
-                                <FormError/>
-                            </div>
-                        )}
-                        {!errors?.question && isFocusQuestion && (
-                            <div className={style.icon}>
-                                <FormCheck/>
-                            </div>
-                        )}
-                    </div>
-                )}
                 <button
                     type="submit"
                     disabled={isLoading}
@@ -151,7 +112,7 @@ export default function Form(props) {
                             ? mainstyles.button
                             : props.isPopup
                                 ? style.button
-                                : "button"
+                                : style.button2
                     }
                 >
                     {props.isOnMain ? "Отправить заявку" : "Отправить"}

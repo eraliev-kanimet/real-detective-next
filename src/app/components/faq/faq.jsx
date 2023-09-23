@@ -1,4 +1,3 @@
-import React from "react";
 import FormPhoto from "@/../public/form-foto.png";
 import "./faq.scss";
 import SecondModal from "../modal/second.jsx";
