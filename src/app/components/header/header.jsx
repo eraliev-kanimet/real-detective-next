@@ -9,7 +9,7 @@ import Navbar from "@/app/components/navbar/navbar";
 
 export default function Header({properties, categories}) {
     return (
-        <header>
+        <header className={style.sticky}>
             <div className={style.header}>
                 <Link href="/">
                     <Image src={Logo} alt="logo" className={style.logo}/>

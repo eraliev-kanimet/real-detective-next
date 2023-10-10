@@ -1,10 +1,98 @@
-.h3 {
+@media screen and (min-width: 1134px) {
+    .faq-container {
+        display: flex;
+        padding: 120px 64px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 64px;
+    }
+
+    .faq-blok {
+        display: flex;
+        align-items: flex-start;
+        gap: 60px;
+        align-self: stretch;
+    }
+
+    .faq-question-blok {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1 0 0;
+    }
+
+    .faq-h3 {
+        font-size: 40px;
+        margin: 0;
+    }
+
+    .faq-blokform {
+        width: 581px;
+        padding: 40px;
+        gap: 32px;
+    }
+
+    .question-icon {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1133px) {
+    .faq-h3 {
+        font-size: 40px;
+        margin: 0;
+        padding: 80px 40px 0 40px;
+    }
+
+    .faq-question-blok {
+        display: flex;
+        padding: 80px 40px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 48px;
+    }
+
+    .faq-blokform {
+        padding: 40px;
+        gap: 32px;
+    }
+
+    .question-icon {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 553px) {
+    .faq-h3 {
+        font-size: 24px;
+        margin: 0;
+        padding: 56px 16px 0 16px;
+    }
+
+    .faq-question-blok {
+        display: flex;
+        padding: 56px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .faq-blokform {
+        padding: 56px 16px;
+        gap: 24px;
+    }
+
+    .question-icon {
+        font-size: 36px;
+    }
+}
+
+.faq-h3 {
     color: #403531;
     font-style: normal;
     font-weight: 700;
     line-height: 140%;
     text-transform: uppercase;
-    margin: 0;
 }
 
 .question-section {
@@ -24,30 +112,26 @@
 .question-align {
     align-items: center;
     display: flex;
-    justify-content: space-between;
     min-height: 10px;
     text-align: left;
 }
 
 .question-style {
-    display: block;
     color: #403531;
     font-size: 21px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 140%;
     margin: 0;
 }
 
 .question-icon {
-    display: block;
     background: none;
     border: none;
     color: #484848;
     cursor: pointer;
     margin-left: auto;
-    min-width: 24px;
-    min-height: 24px;
+    transition: all 0.3s ease;
 
     &.rotate {
         transform: rotate(45deg);
@@ -65,65 +149,16 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
-}
 
-@media screen and (min-width: 553px) {
-    .h3 {
-        font-size: 24px;
-        padding: 56px 16px 0 16px;
-    }
-
-    .question-blok {
-        padding: 56px 16px;
-        gap: 14px;
-    }
-
-    .blokform {
-        padding: 56px 16px;
-        gap: 24px;
-    }
-
-    .question-icon {
-        font-size: 36px;
+    * > {
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
     }
 }
 
-@media screen and (min-width: 675px) {
-    .container {
-        display: flex;
-        padding: 120px 64px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 64px;
-    }
-
-    .blok {
-        display: flex;
-        align-items: flex-start;
-        gap: 60px;
-        align-self: stretch;
-    }
-
-    .question-blok {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex: 1 0 0;
-        padding: 80px 40px;
-    }
-
-    .blokform {
-        width: 581px;
-        padding: 40px;
-        gap: 32px;
-    }
-
-    .question-icon {
-        font-size: 24px;
-    }
-}
-
-.blokform {
+.faq-blokform {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,7 +167,7 @@
     gap: 32px;
 }
 
-.title {
+.faq-title {
     color: #fff;
     font-size: 28px;
     font-style: normal;
@@ -141,13 +176,13 @@
     margin: 0;
 }
 
-.blokdirector {
+.faq-blokdirector {
     display: flex;
     align-items: center;
     gap: 17px;
 }
 
-.text {
+.faq-text {
     color: #fff2d8;
     font-size: 12px;
     font-style: normal;
@@ -155,16 +190,10 @@
     line-height: 24px;
 }
 
-.textdirector {
+.faq-textdirector {
     color: #fff;
     font-size: 21px;
     font-style: normal;
     font-weight: 500;
     line-height: 140%;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }

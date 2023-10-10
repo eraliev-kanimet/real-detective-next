@@ -6,22 +6,22 @@ import Image from "next/image"
 
 export default function FAQ({content, faq}) {
     return (
-        <section className="container">
-            <h3 className="h3">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h3>
-            <div className="blok">
-                <div className="question-blok">
+        <section className="faq-container">
+            <h3 className="faq-h3">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h3>
+            <div className="faq-blok">
+                <div className="faq-question-blok">
                     {faq.map((item, index) => (
                         <FaqItem content={item} key={index}/>
                     ))}
                 </div>
-                <div className="blokform">
-                    <p className="title">Связаться с частным детективом</p>
-                    <div className="blokdirector">
+                <div className="faq-blokform">
+                    <p className="faq-title">Связаться с частным детективом</p>
+                    <div className="faq-blokdirector">
                         <Image src={FormPhoto} alt="director" className="photo"/>
-                        <p className="text">
+                        <p className="faq-text">
                             {content.post}
                             <br/>
-                            <span className="textdirector">{content.name}</span>
+                            <span className="faq-textdirector">{content.name}</span>
                         </p>
                     </div>
                     <SecondModal/>
